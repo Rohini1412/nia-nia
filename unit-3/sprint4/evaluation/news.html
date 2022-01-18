@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/main.css">
+  </head>
+
+  <body>
+    <!--DO NOT CHANGE THIS ID's-->
+
+    <div id="container">
+      <div id="sidebar">
+        <!--add your sidebar component here-->
+      </div>
+
+      <div id="main">
+        <div id="headline">
+          <!--add headline here-->
+        </div>
+        <img id="img" src="" alt="" />
+        <!--show news image here-->
+
+
+        <div id="content">
+          <!--add news content here-->
+        </div>
+      </div>
+    </div>
+  </body>
+
+    <script type="module">
+       import sidebar from "./components/sidebar.js"
+      import { apiCall, appendArticles } from "./scripts/main.js"
+      let sb=document.querySelector("#sidebar");
+sb.innerHTML=sidebar();
+      let main=document.querySelector("#main");
+     let obj= JSON.parse(localStorage.getItem("article"))
+     console.log(obj)
+     let img=document.querySelector("#img");
+     
+     let content=document.querySelector("#content");
+     let headline=document.querySelector("#headline");
+     let h1=document.createElement("h1");
+      img.src=obj.img1;
+      content.textContent=obj.content1;
+      h1.textContent=obj.title1;
+      headline.append(h1)
+      img.append(img)
+     
+      
+      
+
+    </script>
+  </body>
+
+</html>
